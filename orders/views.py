@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import OrderItem, Order
 from .forms import OrderCreateForm
 from cart.cart import Cart
-
+from django.contrib.auth.models import User
 # Create your views here.
 
 
@@ -13,7 +13,10 @@ def order_create(request):
         if form.is_valid():
             user = request.user
             order = form.save(commit=False)
-            order.user = user
+            if isinstance(request.user, User):
+                order.user = request.user
+            else:
+                order.user = User.objects.get(username='Anonymous')
             order.save()
             for item in cart:
                 OrderItem.objects.create(
