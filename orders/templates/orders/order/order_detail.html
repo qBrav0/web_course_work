@@ -17,7 +17,11 @@
     <tbody>
       {% for item in order.items.all %}
         <tr>
-          <td>{{ item.product.name }}</td>
+          <td>            
+            <a href="{% url 'shop:product_detail' item.product.id item.product.slug %}">
+                    {{ item.product.name }}
+            </a>
+          </td>
           <td>{{ item.price }}</td>
           <td>{{ item.quantity }}</td>
           <td>{{ item.get_cost }}</td>
