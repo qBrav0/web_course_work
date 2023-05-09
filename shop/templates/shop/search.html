@@ -1,0 +1,29 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{%static 'css/base.css'}">
+
+{% block content %}
+    <h1>Резути пошука</h1>
+    <p>Результати за запитом "{{ query }}":</p>
+    {% if results %}
+        <ul>
+            <div class="product-search">
+                {% for product in results %}
+                    <div class="search-item">
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{% if product.image %} 
+                                {{ product.image.url }}
+                            {% else %}
+                                {% static 'img/no_image.png' %}    
+                            {% endif %}" alt="">
+                        </a>
+                        <a href="{{ product.get_absolute_url}}">{{ product.name }}</a><br>
+                        ₴ {{ product.price }}
+                    </div>
+                {% endfor %}
+            <div> 
+        </ul>
+    {% else %}
+        <p>Немає результатов за вашим запитом.</p>
+    {% endif %}
+{% endblock content %}

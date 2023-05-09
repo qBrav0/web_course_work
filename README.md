@@ -1,1 +1,2 @@
-# web_course_work
+# django-store
+Online shop on Django

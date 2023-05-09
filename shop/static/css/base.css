@@ -1,0 +1,427 @@
+/* @import url(//fonts.googleapis.com/css?family=Ubuntu); */
+
+body {
+    margin:0;
+    padding:0;
+    font-family:helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5 , h6 {
+    font-family: 'Ubuntu', sans-serif; font-weight:normal;
+    font-weight: bold;
+
+}
+
+a {
+    text-decoration:none;
+    color: #666;
+}
+
+a:hover {
+    color:rgb(0, 0, 0);
+}
+
+a.button, input[type="submit"] {
+    color:yellow;
+    background:#1c1c1c;
+    border-radius:4px;
+    padding:10px 20px;
+    font-size:14px;
+    border:0;
+}
+
+a.button.light {
+    color:#666;
+    background:#ededed;
+}
+
+.text-left {
+    text-align:left;
+}
+
+.text-right {
+    text-align:right;
+}
+
+table {
+    width:100%;
+    border-spacing:0;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    text-align:left;
+    font-size:14px;
+    padding:10px;
+    margin:0;
+}
+
+tbody tr:nth-child(odd) {
+    background:#ffffff;
+}
+
+tbody tr.subtotal {
+    background:#ccc;
+}
+
+thead th, tbody tr.total {
+    background:#333;
+    color:#ffffff;
+    font-weight:bold;
+}
+
+table.cart {
+    margin-bottom:40px;
+}
+
+table.cart img {
+    width:180px;
+}
+
+tbody td.num {
+    text-align:right;
+}
+
+td input[type="submit"] {
+    font-size:12px;
+    padding:4px 10px;
+}
+
+form p label, form p input {
+    float:left;
+    clear:both;
+}
+
+form p label {
+    font-size:14px;
+    padding-bottom:4px;
+}
+
+form p input {
+    width:300px;
+    font-size:13px;
+    margin-bottom:10px;
+    padding:10px 12px;
+    border:0;
+    background:#efefef;
+    color:#666;
+    border-radius:4px;
+}
+
+ul.errorlist {
+   float:left;
+   color:#ff0000;
+   clear:both;
+   font-size:13px;
+   margin:0 0 0 10px;
+   padding:10px 0;
+}
+
+
+#header {
+    padding:10px 100px;
+    font-size:18px;
+    overflow:auto;
+    background-color: #333;
+}
+#header-logo {
+    width: 75px;
+    float:left;
+}
+#subheader {
+    background:#1c1c1c;
+    padding:15px 100px;
+    overflow:auto;
+}
+#subheader form {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#header .logo {
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 1.4%;
+    float:left;
+    color:#ffff00;
+    font-size:40px;
+    margin-right:10%;
+}
+
+#header-registration {
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 1.4%;
+    float: right;
+    color:white;
+    font-size:20px;
+}
+#user-name{
+    color: yellow;
+}
+#header-registration li{
+    list-style-type: none;
+}
+
+#reg-text {
+    color:#ffff00;
+}
+#subheader .cart {
+    float: right;
+    color: yellow;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+
+}
+
+#subheader .cart .cart-icon {
+    width: 30px;
+    float: left; 
+}
+
+#subheader .cart .cart-info {
+    color: yellow;
+}
+
+#subheader .cart .cart-text {
+    color: white;
+}
+
+#content {
+    padding:0 100px;
+    overflow:hidden;
+    background-color: #ffffff;
+}
+
+#sidebar {
+    width:220px;
+    padding:30px 20px 0 0;
+    float:left;
+}
+
+
+#sidebar ul{
+    margin:0;
+    padding:0;
+}
+
+#sidebar ul li {
+    margin:0;
+    list-style:none;
+    padding:10px 14px;
+}
+
+#sidebar ul li a {
+    display:block;
+}
+
+#sidebar ul li.selected {
+    background:yellow;
+    border-radius:4px;
+}
+
+#sidebar ul li.selected a {
+    color:#000000;
+    font-weight: bold;
+}
+
+#main {
+    float:left;
+    width: 96%;
+    margin-right:-220px;
+    overflow:hidden;
+}
+
+.product-list .item {
+    width:25%;
+    padding:10px 20px 10px 0;
+    float:left;
+    text-align:center;
+    line-height:1.2;
+}
+
+.product-list .item img {
+    width:100%;
+    margin-bottom:8px;
+}
+
+.product-detail {
+    text-align:justify;
+}
+
+.product-detail .price {
+    color:#333;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.product-detail img {
+    width:40%;
+    float:left;
+    padding:0 20px 20px 0;
+}
+
+.product-detail h1 {
+    margin-bottom:0;
+}
+
+.product-detail h2 {
+    margin-top:10px;
+}
+#search-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  #search-line input[type="text"] {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+    transition: border-bottom-color 0.3s ease-in-out;
+  }
+  
+  #search-line input[type="text"]:focus {
+    outline: none;
+    border-bottom-color: yellow;
+  }
+  
+  #search-line button[type="submit"] {
+    background-color: white;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #search-line button[type="submit"]:hover {
+    background-color: yellow;
+  }
+  
+.product-search{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-item {
+    width: 25%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.search-item img{
+    max-width: 100%;
+    height: auto;
+}
+.order-form {
+    float:left;
+}
+
+.order-info {
+    float:right;
+    width:300px;
+    background:#efefef;
+    padding:10px 20px;
+    color:#333;
+    border-bottom:4px solid rgb(0, 0, 0);
+}
+
+.order-info h3 {
+    color:#000000;
+}
+
+.order-info ul li {
+    margin:0;
+    padding:0;
+    font-size:14px;
+}
+
+.order-info p {
+    font-weight:bold;
+    float:right;
+}
+
+.order-info span {
+    float:right;
+}
+
+.neg {
+    color:#dc1616;
+}
+
+.languages {
+   float:right;
+   padding-top:4px;
+   font-size:14px;
+}
+
+.languages ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    float:left;
+}
+
+.languages ul li {
+    float:left;
+    margin:0 0 0 10px;
+    font-size:14px;
+}
+
+.languages p {
+    float:left;
+    margin:0;
+}
+
+.recommendations {
+    clear:both;
+}
+
+.recommendations div {
+    float:left;
+}
+
+.recommendations img {
+    width:200px
+}
+
+.recommendations p {
+    clear:both;
+}
+
+.recommendations.cart {
+    width:60%;
+    float:left;
+    overflow:auto;
+}
+
+.recommendations.cart h3 {
+    margin-top:0;
+}
+
+.recommendations.cart .item {
+    margin-right:10px;
+}
+
+.recommendations.cart img {
+    width:120px;
+}
+
+/* braintree hosted fields */
+form div.field {
+    font-size:13px;
+    color:#666;
+    width:300px;
+    height:22px;
+    margin-bottom:10px;
+    padding:6px 12px;
+    border:0;
+    background:#efefef;
+    color:#666;
+    border-radius:4px;
+}
