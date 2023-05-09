@@ -39,9 +39,9 @@ def register(request):
     return render(request, 'registration\\register.html', {'user_form': user_form})
 
 def user_profile(request, username):
-    user = get_object_or_404(User, username=username)
-    orders = Order.objects.filter(user=request.user)
-    for order in orders:
-        order.total_cost = order.get_total_cost()
-    context = {'user': user, 'orders':orders}
+    user_orders = Order.objects.filter(user=request.user)
+    context = {
+        'user': request.user,
+        'orders': user_orders,
+    }
     return render(request, 'profile.html', context)
