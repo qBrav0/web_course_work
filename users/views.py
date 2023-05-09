@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm, UserRegistrationForm
 from django.contrib.auth.models import User
+from orders.models import Order
 
 def user_login(request):
     if request.method == 'POST':
@@ -39,4 +40,8 @@ def register(request):
 
 def user_profile(request, username):
     user = get_object_or_404(User, username=username)
-    return render(request, 'profile.html', {'user': user})
+    orders = Order.objects.filter(user=request.user)
+    for order in orders:
+        order.total_cost = order.get_total_cost()
+    context = {'user': user, 'orders':orders}
+    return render(request, 'profile.html', context)
