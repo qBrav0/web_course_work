@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Cool Cap store{% endblock title %}</title>
+    <link rel="icon" href="{% static 'logos/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 </head>
 <body>
     <div id="header">
@@ -44,7 +46,7 @@
                     <a class="cart-text">Your cart:</a>
                     <a  href="{% url 'cart:cart_detail' %}">
                         <span class="cart-info">{{ total_items }} item{{ total_items|pluralize }},
-                        ${{ cart.get_total_price }}</span>
+                        {{ cart.get_total_price }}</span>
                     </a>
                 {% else %}
                     <img class="cart-icon" src={% static "img/cart_empty.png" %}>
