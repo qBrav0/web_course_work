@@ -458,3 +458,21 @@ form div.field {
     pointer-events: none;
     cursor: not-allowed;
   }
+
+  .btn {
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+   
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+  }
+  

@@ -31,13 +31,12 @@
         {% endif %}  
         </ul>
     </div>
-    <div id="subheader">
-        <div id="d1">
-            <form id="search-line" action="{% url 'shop:search' %}" method="get">
-                <input type="text" name="q" placeholder="Введіть запит...">
-                <button type="submit">Пошук</button>
-            </form>
-        </div>
+    <div id="subheader">        
+        <form id="search-line" action="{% url 'shop:search' %}" method="get">
+            <input type="text" name="q" placeholder="Введіть запит...">
+            <button type="submit">Пошук</button>
+        </form>
+
         <div class="cart">
             {% with total_items=cart|length %}
                 {% if total_items > 0 %}

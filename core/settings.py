@@ -134,3 +134,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR
 
 CART_SESSION_ID = 'cart'
+LOGIN_URL = '\shop\order_auth_required.html'

@@ -17,7 +17,7 @@ class Order(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)
-    user = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=User.objects.get(username='Anonymous'))
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ['-created']
