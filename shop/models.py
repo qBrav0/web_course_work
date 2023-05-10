@@ -44,4 +44,9 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse("shop:product_detail", kwargs={"id": self.id, "slug": self.slug})
-    
+
+class ProductImages(models.Model):
+    """Product image"""
+
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
