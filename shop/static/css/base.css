@@ -425,3 +425,36 @@ form div.field {
     color:#666;
     border-radius:4px;
 }
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    clear: both;
+  }
+  
+  .pagination a,
+  .pagination span {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    margin: 0 2px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .pagination .current-page {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #333;
+    border-color: #333;
+  }
+  
+  .pagination .disabled {
+    color: #999;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
