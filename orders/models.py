@@ -1,8 +1,7 @@
 from django.db import models
 from shop.models import Product
-from django.contrib.auth.models import User
-from django.contrib.auth import get_user_model
-from django.contrib.auth.models import AnonymousUser
+from django.conf import settings
+
 # Create your models here.
 
 
@@ -17,7 +16,7 @@ class Order(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ['-created']
