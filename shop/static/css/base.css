@@ -521,3 +521,19 @@ form div.field {
     display: flex;
     flex-direction: column;
   }
+
+#profile-icon,
+#signup-icon,
+#enter-icon,
+#exit-icon {
+  width: 20px; 
+  height: 20px; 
+}
+
+
+#profile-icon:hover,
+#enter-icon:hover,
+#exit-icon:hover {
+  opacity: 0.8; 
+  cursor: pointer; 
+}

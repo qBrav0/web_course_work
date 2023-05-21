@@ -14,23 +14,37 @@
 </head>
 <body>
     <div id="header">
-        <a href="/"><img id= "header-logo"src="{% static 'logos/logo.jpg' %}" alt="Тут мав бути логотип сайту"></a>
+        <a href="/"><img id="header-logo" src="{% static 'logos/logo.jpg' %}" alt="Тут мав бути логотип сайту"></a>
         <a href="/" class="logo">Cool cap store</a>
         <ul id="header-registration">
-        {% if user.is_authenticated %}
-            <span>Hello,</span>
-            <span><a id="user-name" href="{% url 'users:user_profile' user.username %}"> {{ user.username }}</a></span>
-            <li>
-                <a id="reg-text" href="{% url 'users:logout' %}">Log out</a>
-            </li>
-        {% else %}
-            <li>
-                <a id="reg-text" href="{% url 'users:login' %}">Log in</a>
-            </li>
-            <li>
-                <a id="reg-text" href="{% url 'users:register' %}">Sign up</a>
-            </li>
-        {% endif %}  
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'users:user_profile' user.username %}">
+                        <img id="profile-icon" src="{% static 'img/profile.png' %}" alt="Профіль">
+                    </a>
+                    <span>Hello,</span>
+                    <span><a id="user-name" href="{% url 'users:user_profile' user.username %}">{{ user.username }}</a></span>
+                </li>
+                <li>
+                    <a href="{% url 'users:logout' %}">
+                        <img id="exit-icon" src="{% static 'img/exit.png' %}" alt="Вихід">
+                    </a>
+                    <a id="reg-text" href="{% url 'users:logout' %}">Log out</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'users:login' %}">
+                        <img id="enter-icon" src="{% static 'img/enter.png' %}" alt="Вхід">
+                    </a>
+                    <a id="reg-text" href="{% url 'users:login' %}">Log in</a>
+                </li>
+                <li>
+                    <a href="{% url 'users:register' %}">
+                        <img id="signup-icon" src="{% static 'img/sign_up.png' %}" alt="Реєстрація">
+                    </a>
+                    <a id="reg-text" href="{% url 'users:register' %}">Sign up</a>
+                </li>
+            {% endif %}
         </ul>
     </div>
     <div id="subheader">        
@@ -44,12 +58,12 @@
                 {% if total_items > 0 %}
                     <img class="cart-icon" src="{% static 'img/cart_fully.png' %}">
                     <a class="cart-text">Your cart:</a>
-                    <a  href="{% url 'cart:cart_detail' %}">
+                    <a href="{% url 'cart:cart_detail' %}">
                         <span class="cart-info">{{ total_items }} item{{ total_items|pluralize }},
                         {{ cart.get_total_price }}</span>
                     </a>
                 {% else %}
-                    <img class="cart-icon" src={% static "img/cart_empty.png" %}>
+                    <img class="cart-icon" src="{% static 'img/cart_empty.png' %}">
                     <span class="cart-info">Your cart is empty</span>
                 {% endif %}
             {% endwith %}
