@@ -7,7 +7,7 @@ from cart.cart import Cart
 def order_create(request):
     cart = Cart(request)
     if request.method == 'POST':
-        form = OrderCreateForm(request.POST)
+        form = OrderCreateForm(request.POST, user=request.user)
         if form.is_valid():
             order = form.save(commit=False)
             order.user = request.user
@@ -18,22 +18,20 @@ def order_create(request):
                     product=item['product'],
                     price=item['price'],
                     quantity=item['quantity'],
-                
                 )
-
-            cart.clear()           
+            cart.clear()
             return render(request, template_name='orders/order/created.html', context={'order': order})
     else:
-        form = OrderCreateForm()
+        form = OrderCreateForm(user=request.user)
     if not request.user.is_authenticated:
         return render(request, 'shop/order_auth_required.html')
-    
-    return render(request, template_name='orders/order/create.html', 
-                    context={
-                        'form': form,
-                        'cart': cart
-                    }
-            )
+
+    return render(request, template_name='orders/order/create.html',
+                  context={
+                      'form': form,
+                      'cart': cart
+                  }
+                  )
 
 def order_detail(request, order_id):
     order = get_object_or_404(Order, id=order_id)

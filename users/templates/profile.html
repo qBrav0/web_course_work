@@ -1,26 +1,65 @@
 {% extends 'shop/base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>Profile page for {{ user.username }}</h1>
-    <ul>
-        <li>First Name: {{ user.first_name }}</li>
-        <li>Last Name: {{ user.last_name }}</li>
-        <li>Email: {{ user.email }}</li>
-        <li>Address: {{ user.address }}</li>
-        <li>City: {{ user.city }}</li>
-        <li>Postal Code: {{ user.postal_code }}</li>
-    </ul>
+    <h1 class="mb-4">Profile page for {{ user.username }}</h1>
+    <div class="user-info">
+        <div class="mb-3">
+            <span class="info-label">First Name:</span>
+            <span class="info-value">{{ user.first_name }}</span>
+        </div>
+        <div class="mb-3">
+            <span class="info-label">Last Name:</span>
+            <span class="info-value">{{ user.last_name }}</span>
+        </div>
+        <div class="mb-3">
+            <span class="info-label">Email:</span>
+            <span class="info-value">{{ user.email }}</span>
+        </div>
+        <div class="mb-3">
+            <span class="info-label">Address:</span>
+            <span class="info-value">{{ user.address }}</span>
+        </div>
+        <div class="mb-3">
+            <span class="info-label">City:</span>
+            <span class="info-value">{{ user.city }}</span>
+        </div>
+        <div class="mb-3">
+            <span class="info-label">Postal Code:</span>
+            <span class="info-value">{{ user.postal_code }}</span>
+        </div>
+    </div>
+
+    <form action="{% url 'users:edit_profile' %}">
+            <input type="submit" class="btn btn-primary" value="Редагувати профіль">
+    </form>
+
+    <hr class="my-5">
+
+    <h2 class="mb-4">Order History</h2>
     {% if orders %}
-    <ul>
-        {% for order in orders %}
-            <li>
-                <a href="{% url 'orders:order_detail' order.id %}">
-                    Замовлення №{{ order.id }} ({{ order.get_total_cost }} грн.)
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>Order Number</th>
+                    <th>Total Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'orders:order_detail' order.id %}">
+                                Замовлення №{{ order.id }}
+                            </a>
+                        </td>
+                        <td>{{ order.get_total_cost }} грн.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     {% else %}
         <p>Наразі немає замовлень.</p>
     {% endif %}
 {% endblock %}
+
