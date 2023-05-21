@@ -1,4 +1,6 @@
 {% extends 'shop/base.html' %}
+{% load static %}
+<script src="{% static 'js/profile.js' %}"></script>
 
 {% block content %}
     <h1>Profile page for {{ user.username }}</h1>
@@ -10,6 +12,9 @@
         <li>City: {{ user.city }}</li>
         <li>Postal Code: {{ user.postal_code }}</li>
     </ul>
+    
+    <a href="{% url 'users:edit_profile' %}" class="edit-profile-button">Редагувати профіль</a>
+
     {% if orders %}
     <ul>
         {% for order in orders %}
@@ -24,3 +29,4 @@
         <p>Наразі немає замовлень.</p>
     {% endif %}
 {% endblock %}
+
