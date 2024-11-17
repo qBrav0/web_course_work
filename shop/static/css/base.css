@@ -22,7 +22,7 @@ a:hover {
 }
 
 a.button, input[type="submit"] {
-    color:yellow;
+    color:rgb(0, 109, 102);
     background:#1c1c1c;
     border-radius:4px;
     padding:10px 20px;
@@ -118,18 +118,8 @@ ul.errorlist {
 }
 
 
-#header {
-    padding:10px 100px;
-    font-size:18px;
-    overflow:auto;
-    background-color: #333;
-}
-#header-logo {
-    width: 75px;
-    float:left;
-}
 #subheader {
-    background:#1c1c1c;
+    background:#b1e0fe;
     padding:15px 100px;
     overflow:auto;
 }
@@ -138,13 +128,40 @@ ul.errorlist {
     vertical-align: middle;
 }
 
-#header .logo {
-    font-family: 'Ubuntu', sans-serif;
-    margin-top: 1.4%;
-    float:left;
-    color:#ffff00;
-    font-size:40px;
-    margin-right:10%;
+#header {
+    display: flex;
+    align-items: center; /* Вирівнює елементи по вертикалі */
+    justify-content: space-between; /* Розподіляє простір між логотипом і кнопками */
+    padding: 10px 100px;
+    font-size: 18px;
+    background-color: #7fd9ff;
+}
+
+/* Логотип */
+.logo {
+    display: flex;
+    align-items: center; /* Вирівнює логотип і текст по вертикалі */
+    text-decoration: none; /* Забирає підкреслення */
+}
+
+.logo-img {
+    height: 100px; /* Розмір логотипа */
+    margin-right: 10px; /* Відступ між логотипом і текстом */
+}
+
+.logo-text {
+    font-size: 24px; /* Розмір тексту назви */
+    font-weight: bold; /* Жирність тексту */
+    color: #000; /* Колір тексту */
+}
+
+/* Кнопки входу та реєстрації */
+#header-registration {
+    display: flex;
+    align-items: center; /* Вирівнює кнопки по вертикалі */
+    gap: 20px; /* Відступ між кнопками */
+    margin: 0; /* Прибирає зайві відступи */
+    list-style: none; /* Забирає стилізацію списку */
 }
 
 #header-registration {
@@ -154,19 +171,30 @@ ul.errorlist {
     color:white;
     font-size:20px;
 }
+
+/* Іконки */
+#profile-icon,
+#signup-icon,
+#enter-icon,
+#exit-icon {
+    width: 20px; /* Розмір іконок */
+    height: 20px; 
+    margin-right: 8px; /* Відступ між іконкою та текстом */
+}
+
 #user-name{
-    color: yellow;
+    color: 7fd9ff;
 }
 #header-registration li{
     list-style-type: none;
 }
 
 #reg-text {
-    color:#ffff00;
+    color:#000000;
 }
 #subheader .cart {
     float: right;
-    color: yellow;
+    color: rgb(0, 0, 0);
     margin: 20px 0;
     display: flex;
     align-items: center;
@@ -179,7 +207,7 @@ ul.errorlist {
 }
 
 #subheader .cart .cart-info {
-    color: yellow;
+    color: rgb(0, 0, 0);
 }
 
 #subheader .cart .cart-text {
@@ -215,7 +243,7 @@ ul.errorlist {
 }
 
 #sidebar ul li.selected {
-    background:yellow;
+    background:7fd9ff;
     border-radius:4px;
 }
 
@@ -281,13 +309,13 @@ ul.errorlist {
     border-bottom: 2px solid #ccc;
     padding: 10px;
     font-size: 16px;
-    width: 250px;
+    width: 850px;
     transition: border-bottom-color 0.3s ease-in-out;
   }
   
   #search-line input[type="text"]:focus {
     outline: none;
-    border-bottom-color: yellow;
+    border-bottom-color: 7fd9ff;
   }
   
   #search-line button[type="submit"] {
@@ -302,7 +330,7 @@ ul.errorlist {
   }
   
   #search-line button[type="submit"]:hover {
-    background-color: yellow;
+    background-color: 7fd9ff;
   }
   
 .product-search{

@@ -5,16 +5,16 @@
     {% if category %}
         {{ category.name}}
     {% else %}
-        Products
+        Товари
     {% endif %}
 {% endblock title %}
 
 {% block content %}
     <div id="sidebar">
-        <h3>Categories</h3>
+        <h3>Категорії</h3>
         <ul id="categories">
             <li {% if not category %}class="selected"{% endif %}>
-                <a href="{% url 'shop:product_list' %}">All</a>
+                <a href="{% url 'shop:product_list' %}">Всі</a>
             </li>
             {% for c in categories %}
                 <li {% if category.slug == c.slug %}class="selected"{% endif %}>
@@ -29,7 +29,7 @@
             {% if category %}
                 {{ category.name }}
             {% else %}
-                Products
+                Товари
             {% endif %}
         </h1>
         {% for product in products %}
